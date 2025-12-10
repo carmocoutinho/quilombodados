@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QuilomboDados - Biblioteca Digital do Pará</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Fonte Serifada para dar um ar de documento histórico/acadêmico -->
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,700;1,300&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Navegação -->
+    <nav class="navbar">
+        <div class="logo">
+            <span class="material-icons">menu_book</span> Quilombo<span class="highlight">Dados</span>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#inicio">Início</a></li>
+            <li><a href="#acervo">Acervo</a></li>
+            <li><a href="#mapa">Mapa de Estudos</a></li>
+            <li><a href="#sobre">Sobre o Projeto</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section (Busca Principal) -->
+    <header id="inicio" class="hero">
+        <div class="hero-content">
+            <h1>Memória e Ciência nos Quilombos do Pará</h1>
+            <p>"A verdadeira pesquisa é aquela que volta para a terra como semente."</p>
+            
+            <div class="search-box">
+                <input type="text" id="searchInput" placeholder="Busque por autor, comunidade (ex: Abacatal) ou tema...">
+                <button onclick="realizarBusca()"><span class="material-icons">search</span></button>
+            </div>
+            
+            <div class="tags-container">
+                <span>Populares:</span>
+                <button class="tag-btn" onclick="filtrarTag('Território')">Território</button>
+                <button class="tag-btn" onclick="filtrarTag('Saúde')">Saúde</button>
+                <button class="tag-btn" onclick="filtrarTag('Educação')">Educação</button>
+                <button class="tag-btn" onclick="filtrarTag('Arqueologia')">Arqueologia</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Painel de Estatísticas (Dashboard) -->
+    <section class="stats-panel">
+        <div class="stat-card">
+            <h3>152</h3>
+            <p>Obras Indexadas</p>
+        </div>
+        <div class="stat-card">
+            <h3>45</h3>
+            <p>Comunidades Citadas</p>
+        </div>
+        <div class="stat-card">
+            <h3>UFPA/UEPA</h3>
+            <p>Maiores Produtores</p>
+        </div>
+    </section>
+
+    <!-- Área de Resultados (Acervo) -->
+    <main id="acervo" class="container">
+        <div class="filter-bar">
+            <h2>Acervo Bibliográfico</h2>
+            <select id="filtroTipo" onchange="aplicarFiltros()">
+                <option value="todos">Todos os Tipos</option>
+                <option value="Tese">Teses (Doutorado)</option>
+                <option value="Dissertação">Dissertações (Mestrado)</option>
+                <option value="Artigo">Artigos Científicos</option>
+            </select>
+        </div>
+
+        <div id="results-grid" class="grid-container">
+            <!-- Os cards serão gerados via JavaScript -->
+        </div>
+    </main>
+
+    <footer>
+        <p>Projeto de Mestrado Profissional - Computação Aplicada</p>
+        <p>Inspirado nas obras de Abdias do Nascimento e Nêgo Bispo.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
